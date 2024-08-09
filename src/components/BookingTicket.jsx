@@ -10,7 +10,7 @@ const BookingTicket = () => {
         return danhSachGheJson.map((item, index) => {
             return (
                 <div key={index}>
-                    <HangGhe dataGhe={item}></HangGhe>
+                    <HangGhe index={index} dataHangandGhe={item} />
                 </div>
             );
         });
@@ -40,18 +40,17 @@ const BookingTicket = () => {
                 <div className="container">
                     <div className="flex justify-between">
                         <div className="w-8/12">
-                            <h1 className="py-4 uppercase text-4xl text-center text-sky-400">
+                            <h1 className="py-5 uppercase text-4xl text-center text-sky-400">
                                 Đặt vé xem phim Cyberlearn.vn
                             </h1>
-                            <div className=" screen mt-2 mx-auto">
-                                <h3 className="text-2xl mb-3  text-white text-center ">
+                            <div className=" screen  mx-auto">
+                                <h3 className="mb-2 text-2xl   text-white text-center ">
                                     Màn hình
                                 </h3>
                             </div>
-                            <div>
-                                {/* Viết xử lí render ghế theo từng rows */}
-                                {renderGhe()}
-                            </div>
+
+                            {/* Viết xử lí render ghế theo từng rows */}
+                            {renderGhe()}
                         </div>
                         <div className="w-4/12">
                             <h2 className="uppercase pt-10 text-center text-purple-500 text-3xl">

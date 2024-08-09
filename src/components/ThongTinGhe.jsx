@@ -17,60 +17,92 @@ const ThongTinGhe = () => {
                 <span className="text-white text-xl ms-2 "> Ghế chưa đặt</span>
             </div>
 
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" className="px-6 py-3">
                                 Số ghế
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" className="px-6 py-3">
                                 Giá
                             </th>
 
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" className="px-6 py-3">
                                 Action
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="odd:bg-white  even:bg-gray-50  border-b ">
+                        <tr className="odd:bg-white  even:bg-gray-50  border-b ">
                             <th
                                 scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
                             >
                                 Apple MacBook Pro 17"
                             </th>
 
-                            <td class="px-6 py-4">$2999</td>
-                            <td class="px-6 py-4">
+                            <td className="px-6 py-4">$2999</td>
+                            <td className="px-6 py-4">
                                 <a
                                     href="#"
-                                    class="font-medium text-blue-600  hover:underline"
+                                    className="font-medium text-blue-600  hover:underline"
                                 >
-                                    Edit
+                                    <svg
+                                        class="w-6 h-6 text-gray-800 "
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                                        />
+                                    </svg>
                                 </a>
                             </td>
                         </tr>
-                        <tr class="odd:bg-white  even:bg-gray-50  border-b ">
+                        <tr className="odd:bg-white  even:bg-gray-50  border-b ">
                             <th
                                 scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
                             >
                                 Microsoft Surface Pro
                             </th>
 
-                            <td class="px-6 py-4">$1999</td>
-                            <td class="px-6 py-4">
+                            <td className="px-6 py-4">$1999</td>
+                            <td className="px-6 py-4">
                                 <a
                                     href="#"
-                                    class="font-medium text-blue-600 hover:underline"
+                                    className="font-medium text-blue-600 hover:underline"
                                 >
-                                    Edit
+                                    <svg
+                                        class="w-6 h-6 text-gray-800 "
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                                        />
+                                    </svg>
                                 </a>
                             </td>
                         </tr>
-                        <tr class="odd:bg-white  even:bg-gray-50  border-b dark:border-gray-700">
+                        <tr className="odd:bg-white  even:bg-gray-50  border-b dark:border-gray-700">
                             <th
                                 scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap d"
@@ -78,13 +110,29 @@ const ThongTinGhe = () => {
                                 Magic Mouse 2
                             </th>
 
-                            <td class="px-6 py-4">$99</td>
-                            <td class="px-6 py-4">
+                            <td className="px-6 py-4">$99</td>
+                            <td className="px-6 py-4">
                                 <a
                                     href="#"
-                                    class="font-medium text-blue-600  hover:underline"
+                                    className="font-medium text-blue-600  hover:underline"
                                 >
-                                    Edit
+                                    <svg
+                                        class="w-6 h-6 text-gray-800 "
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke="currentColor"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                                        />
+                                    </svg>
                                 </a>
                             </td>
                         </tr>
