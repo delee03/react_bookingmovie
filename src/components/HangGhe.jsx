@@ -12,15 +12,15 @@ const HangGhe = ({ dataHangandGhe, index }) => {
 
     const handleButton = (soGhe) => {
         let updateDangChon;
-        if (dangChon.includes(soGhe)) {
+        if (gheDuocChon.includes(soGhe)) {
             // setDangChon(dangChon.filter((ghe) => ghe !== soGhe));
-            updateDangChon = dangChon.filter((ghe) => ghe !== soGhe);
+            updateDangChon = gheDuocChon.filter((ghe) => ghe !== soGhe);
             // xóa ghế khỏi danh sách ghế đang chọn khi click vào ghế đã chọn trước đó
         } else {
             // setDangChon([...dangChon, soGhe]);
-            updateDangChon = [...dangChon, soGhe];
+            updateDangChon = [...gheDuocChon, soGhe];
         }
-        setDangChon(updateDangChon);
+        // setDangChon(updateDangChon);
         dispatch(capNhatSeat(updateDangChon));
     };
 
@@ -63,7 +63,7 @@ const HangGhe = ({ dataHangandGhe, index }) => {
                                 className={`ghe text-white ${
                                     disable ? "gheDuocChon" : ""
                                 } ${
-                                    dangChon.includes(item.soGhe) //includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate
+                                    gheDuocChon.includes(item.soGhe) //includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate
                                         ? "gheDangChon"
                                         : ""
                                 }`} // Check if dangChon includes the current button's value

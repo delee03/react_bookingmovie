@@ -1,5 +1,5 @@
 import { createSlice, current } from "@reduxjs/toolkit";
-import { React } from "react";
+import { act, React } from "react";
 
 const initialState = {
     ten: "Ghế rạp CGV ",
@@ -168,6 +168,7 @@ const gheSlice = createSlice({
 
     reducers: {
         capNhatSeat: (state, action) => {
+            const seat = action.payload;
             state.gheDuocChon = action.payload; // add the payload to the gheDuocChon array
             console.log(action);
             console.log(state.gheDuocChon);
