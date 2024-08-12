@@ -3,11 +3,14 @@ import "./BaiTapBookingTicket.css";
 import ThongTinGhe from "./ThongTinGhe";
 import danhSachGheJson from "../assets/danhSachGhe.json";
 import HangGhe from "./HangGhe";
+import { useSelector } from "react-redux";
 
 const BookingTicket = () => {
+    const { seats } = useSelector((state) => state.gheSlice);
+    //console.log(valueState);
     //render hàng ghế
     const renderGhe = () => {
-        return danhSachGheJson.map((item, index) => {
+        return seats.map((item, index) => {
             return (
                 <div key={index}>
                     <HangGhe index={index} dataHangandGhe={item} />

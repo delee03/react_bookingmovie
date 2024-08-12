@@ -1,7 +1,17 @@
 import React from "react";
 import "./BaiTapBookingTicket.css";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { capNhatSeat } from "../redux/gheSlice";
 
 const ThongTinGhe = () => {
+    const dispatch = useDispatch();
+    const { gheDuocChon } = useSelector((state) => state.gheSlice);
+
+    const deleteSeat = (soGhe) => {
+        const updatedGheDuocChon = gheDuocChon.filter((item) => item !== soGhe);
+        dispatch(capNhatSeat(updatedGheDuocChon));
+    };
     return (
         <div className="mt-10 space-y-5">
             <div>
@@ -34,106 +44,56 @@ const ThongTinGhe = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="odd:bg-white  even:bg-gray-50  border-b ">
-                            <th
-                                scope="row"
-                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-                            >
-                                Apple MacBook Pro 17"
-                            </th>
-
-                            <td className="px-6 py-4">$2999</td>
-                            <td className="px-6 py-4">
-                                <a
-                                    href="#"
-                                    className="font-medium text-blue-600  hover:underline"
-                                >
-                                    <svg
-                                        class="w-6 h-6 text-gray-800 "
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
+                        {gheDuocChon.map((item, index) => {
+                            return (
+                                <>
+                                    <tr
+                                        className="odd:bg-white  even:bg-gray-50  border-b "
+                                        key={index}
                                     >
-                                        <path
-                                            stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                                        />
-                                    </svg>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr className="odd:bg-white  even:bg-gray-50  border-b ">
-                            <th
-                                scope="row"
-                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-                            >
-                                Microsoft Surface Pro
-                            </th>
+                                        <th
+                                            scope="row"
+                                            className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+                                        >
+                                            {item}
+                                        </th>
 
-                            <td className="px-6 py-4">$1999</td>
-                            <td className="px-6 py-4">
-                                <a
-                                    href="#"
-                                    className="font-medium text-blue-600 hover:underline"
-                                >
-                                    <svg
-                                        class="w-6 h-6 text-gray-800 "
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                                        />
-                                    </svg>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr className="odd:bg-white  even:bg-gray-50  border-b dark:border-gray-700">
-                            <th
-                                scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap d"
-                            >
-                                Magic Mouse 2
-                            </th>
-
-                            <td className="px-6 py-4">$99</td>
-                            <td className="px-6 py-4">
-                                <a
-                                    href="#"
-                                    className="font-medium text-blue-600  hover:underline"
-                                >
-                                    <svg
-                                        class="w-6 h-6 text-gray-800 "
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-                                        />
-                                    </svg>
-                                </a>
+                                        <td className="px-6 py-4">75 000đ</td>
+                                        <td className="px-6 py-4">
+                                            <button
+                                                onClick={() => {
+                                                    console.log("delete");
+                                                    deleteSeat(item);
+                                                }}
+                                                className="font-medium text-blue-600  hover:underline"
+                                            >
+                                                <svg
+                                                    className="w-6 h-6 text-gray-800 "
+                                                    aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        stroke="currentColor"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+                                                    />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </>
+                            );
+                        })}
+                        <tr className="text-white h-6">
+                            <td>Tổng tiền</td>
+                            <td>
+                                {(gheDuocChon.length * 75000).toLocaleString()}
                             </td>
                         </tr>
                     </tbody>
